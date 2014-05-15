@@ -1,8 +1,10 @@
 package br.calebe.exemplos.ex01;
 
+import junit.framework.Assert;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+
 
 public class CarrinhoTest {
 
@@ -22,16 +24,44 @@ public class CarrinhoTest {
     
     @Test
     public void colocandoUmProduto() throws CarrinhoVazioExpected {
-        //Carrinho car = new Carrinho();
         Produto livro = new Produto("Java em 24 horas", 50.00);
         carrinho.add(livro);
         int qtdDeItens = carrinho.getQtdDeItens();
-        //Produto menor;
-        //menor = carrinho.menorProduto();
-        assertEquals(qtdDeItens, 1);
-        
-        
+        assertEquals(qtdDeItens, 1);    
     }
+    
+    
+    @Test
+    public boolean temProduto(Carrinho car) throws CarrinhoVazioExpected
+    {   
+        if(car.getQtdDeItens() >= 0)
+            return true;
+        else
+            return false;
+    }
+    
+    @Test
+    public void removerProduto() throws CarrinhoVazioExpected
+    {
+        Carrinho car = new Carrinho();
+        Produto livro = new Produto("Java em 24 horas", 50.00 ); 
+        car.remover(livro);
+        boolean vazio;
+        vazio = car.isEmpty();
+        Assert.assertTrue(vazio);
+    }
+    
+    @Test
+    public void colocandoMaisProdutos() throws CarrinhoVazioExpected {
+        Produto livro = new Produto("Java em 24 horas", 50.00);
+        carrinho.add(livro);
+        Produto deitel = new Produto("Java: como programar", 150.00);
+        carrinho.add(deitel);
+        int qtdDeItens = carrinho.getQtdDeItens();
+        assertEquals(livro, qtdDeItens);
+    }
+    
+    
     
 
    /* @Test(expected = CarrinhoVazioExpected.class)
