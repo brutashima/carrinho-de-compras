@@ -20,6 +20,16 @@ public class CarrinhoTest {
         assertEquals(isEmpty, true);
     }
     
+    @Test
+    public void colocandoUmProduto() throws CarrinhoVazioExpected {
+        Produto livro = new Produto("Java em 24 horas", 50.00);
+        carrinho.add(livro);
+        int qtdDeItens = carrinho.getQtdDeItens();
+        //Produto menor;
+        //menor = carrinho.menorProduto();
+        assertEquals(livro, qtdDeItens);
+    }
+    
 
    /* @Test(expected = CarrinhoVazioExpected.class)
     public void colocandoZeroProduto() throws CarrinhoVazioExpected {
