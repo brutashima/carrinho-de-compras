@@ -22,12 +22,15 @@ public class CarrinhoTest {
     
     @Test
     public void colocandoUmProduto() throws CarrinhoVazioExpected {
+        //Carrinho car = new Carrinho();
         Produto livro = new Produto("Java em 24 horas", 50.00);
         carrinho.add(livro);
         int qtdDeItens = carrinho.getQtdDeItens();
         //Produto menor;
         //menor = carrinho.menorProduto();
-        assertEquals(livro, qtdDeItens);
+        assertEquals(qtdDeItens, 1);
+        
+        
     }
     
 

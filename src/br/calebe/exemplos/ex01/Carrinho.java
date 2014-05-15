@@ -34,9 +34,8 @@ public class Carrinho {
     
     //Adicionar um produto
     public void add(Produto produto) throws CarrinhoVazioExpected{
-        Produto p = new Produto();
-        produtos.add(produto);
         qtdDeItens++;
+        
     }
 
     public Produto menorProduto() throws CarrinhoVazioExpected {

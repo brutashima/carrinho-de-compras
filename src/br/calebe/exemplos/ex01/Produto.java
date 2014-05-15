@@ -26,4 +26,8 @@ public class Produto {
     public boolean equals(Produto obj) {
         return nome.equals(obj.nome);
     }
+
+    Produto add(Produto produto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
