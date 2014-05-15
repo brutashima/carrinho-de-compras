@@ -12,8 +12,16 @@ public class CarrinhoTest {
     public void criandoCarrinho() {
         carrinho = new Carrinho();
     }
+    
+    @Test
+    public void criarCarrinhoVazio()
+    {
+        boolean isEmpty = carrinho.isEmpty();
+        assertEquals(isEmpty, true);
+    }
+    
 
-    @Test(expected = CarrinhoVazioExpected.class)
+   /* @Test(expected = CarrinhoVazioExpected.class)
     public void colocandoZeroProduto() throws CarrinhoVazioExpected {
         Produto menor;
         menor = carrinho.menorProduto();
@@ -47,5 +55,5 @@ public class CarrinhoTest {
         Produto copia = new Produto("Java em 24 horas", 50.00);
         original = carrinho.menorProduto();
         assertEquals(original, copia);
-    }
+    }*/
 }
