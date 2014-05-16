@@ -1,10 +1,12 @@
 package br.calebe.exemplos.ex01;
 
 public class Item {
+    private Produto produto;
     private int qtde;
 
-    public Item(int qtde) {
+    public Item(int qtde, Produto produto) {
         this.qtde = qtde;
+        this.produto = produto;
     }
 
     public int getQtde() {
@@ -15,5 +17,7 @@ public class Item {
         this.qtde = qtde;
     }
     
-    
+    public Produto getProduto(){
+        return produto;
+    }
 }
