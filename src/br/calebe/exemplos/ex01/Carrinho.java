@@ -58,6 +58,10 @@ public class Carrinho {
 //        return menor;
 //    }
 
+    public List<Item> getLista() {
+        return produtos;
+    }
+
     
 
 }
