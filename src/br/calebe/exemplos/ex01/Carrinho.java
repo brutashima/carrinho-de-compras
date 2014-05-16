@@ -62,6 +62,20 @@ public class Carrinho {
         return produtos;
     }
 
+   public double total() {
+        double aux = 0.0;
+        
+        for(int j=0; j<getQtdDeItens(); j++)
+        {
+            Item item = produtos.get(j);
+            Produto produtoItem = item.getProduto();
+            aux = aux + item.getQtde() * produtoItem.getPreco();
+            
+        }
+        
+        return aux;
+    }
+
     
 
 }

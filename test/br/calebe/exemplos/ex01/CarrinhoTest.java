@@ -71,10 +71,20 @@ public class CarrinhoTest {
         carrinho.add(deitel);
         
         int aux = carrinho.getLista().size();
-        assertEquals(2, aux);
-        
+        assertEquals(2, aux);   
     }
     
+    @Test
+    public void calcularTotalPreco() throws CarrinhoVazioExpected {
+        Carrinho carrinho = new Carrinho();
+        Produto livro = new Produto("Java em 24 horas", 50.00);
+        carrinho.add(livro);
+        Produto deitel = new Produto("Java: como programar", 150.00);
+        carrinho.add(deitel);
+        Double total = 200.00;
+        Double totalCarrinho = carrinho.total();
+        assertEquals(total, totalCarrinho);
+    }
  
     
 
